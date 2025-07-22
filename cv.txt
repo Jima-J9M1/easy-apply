@@ -1,0 +1,119 @@
+Jima Dube Nuture
+Software Engineer
+jima.d.nuture@gmail.com +251 902283730 Addis Ababa, Ethiopia in/jima-dube/
+github.com/Jima-J9M1 u/Jima30
+Professional Experience
+Full Stack Developer | Next.js | Fastapi | Node.js, Shega Media and Technology
+•Developed a scalable FastAPI backend service that pulls ML models from Azure
+Blob Storage to predict main, sub, and sub-sub categories from user-provided
+titles. This system automated classification for uncategorized datasets, improving
+tagging accuracy by over 85% and reducing manual effort by 70%.
+•Scraped and aggregated datasets from 10+ websites, transforming raw data into
+interactive charts, infographics, and articles. These visualizations increased user
+engagement by 40% and enhanced data storytelling.
+12/2023 – Present
+Addis Ababa, Ethiopia
+•Engineered a robust PDF parsing system that chunks large documents and stores
+embeddings in ChromaDB (vector database). Enabled real-time Q&A with PDFs,
+achieving 90%+ query accuracy and reducing information retrieval time by 60%.
+•Integrated vector database support into the knowledge base of our AI-powered
+system (Ask Shega), significantly enhancing semantic search accuracy and
+information retrieval capabilities.
+•Integrated GraphQL API to streamline data queries between frontend and backend,
+increasing data access flexibility and reducing frontend query complexity by 50%.
+Backend Developer |.Net Core, Node.js Developer, Eskalate LLC
+•Developed a secure REST API using C# and .NET Framework, reducing security
+vulnerabilities by 80% and enabling encrypted communication for student users.
+•Applied Clean Architecture principles by decoupling layers (Domain, Application,
+Infrastructure, and Presentation), which decreased development time by 20% and
+improved maintainability.
+10/2023 – Present
+Addis Ababa, Ethiopia
+•Achieved 95% test coverage using xUnit, Moq, and FluentAssertions, significantly
+increasing code reliability and facilitating continuous integration.
+•Integrated JWT-based authentication, reducing unauthorized access attempts by
+80% and ensuring secure user sessions.
+•Authored comprehensive technical documentation, including user stories,
+functional requirements, and system architecture, streamlining team
+collaboration and onboarding.
+•Optimized API performance by implementing pagination for large data sets,
+resulting in a 45% reduction in response time and preventing memory overload
+during high-volume requests.
+Front End Developer | React, Next.js, Microsun Solution
+•Led a team of 5 developers to build an online learning platform tailored for local
+users, resulting in 1,200+ learners and 300+ certifications issued within the first 6
+months.
+•Implemented third-party GitHub authentication and APIs for data visualization of
+students' progress.
+06/2023 – 09/2023
+Addis Ababa, Ethiopia
+•Implemented secure JWT-based authentication and encrypted user credentials
+using advanced hashing, enhancing data protection and reducing unauthorized
+access attempts by 90%.
+Education
+Bachelor of Science in Software Engineering,
+Addis Ababa Science and Technology University (AASTU)
+Relevant Courses: Programming (C++), OOP (Java), Networking, Distributed Systems,
+Computer Security, Software Design and Architecture.
+11/2019 – 07/2024
+Addis Ababa, Ethiopia
+Data Structures, Algorithms, and Problem Solving | Competitive Programming,
+Africa To Silicon Valley | A2SV, Backed by Google twice
+•A2SV is empowering African students with tech education, more than 80 students
+secured full-time SWE jobs at top-tech companies including Amazon, Microsoft,
+Google, Bloomberg, Palantir.
+•I completed intensive in-person training in algorithms, software engineering, and
+communication, applying skills through real-world team projects, and gained handson experience in the industry environment.
+11/2022 – 10/2023
+Addis Ababa, Ethiopia
+Skills
+Programming Languages
+•C++
+•Python
+•Java
+•C#
+•JavaScript
+•TypeScript
+Databases
+•PostgreSQL
+•MS SQL Server
+•MySQL
+•MongoDB
+•Redis
+DevOps
+•GitHub Actions
+•Docker
+•Google Cloud Platform (GCP)
+•VPS server.
+Web Frameworks
+•React.js
+•Node.js
+•Express.js/NestJS
+•ASP.NET Core
+Version Control
+•Git
+•GitHub
+Achievements and Certifications
+Top Semi-Finalist in the Largest Ethiopia Hospitality Hackathon
+A Recognition for Mentoring and Teaching young student
+Projects
+Pure Art Platform, Nextjs, Strapi, Render
+•Created an online platform that bridges visual artists with global audiences and
+collectors.
+•Onboarded 50+ verified artists and hosted 300+ curated artworks, enabling wider
+exposure and increased sales opportunities.
+04/2025 – 07/2025
+•Designed a clean, gallery-style interface to enhance discoverability and user
+engagement.
+•Facilitated 20% month-over-month growth in user visits and inquiries through SEO
+optimization and integrated social sharing.
+AI Proposal Writing, Nextjs, Nest.js, Geminia
+•Built a powerful AI-driven web application to automate and streamline proposal
+writing for professionals and businesses.
+•Reduced proposal drafting time by up to 70%, allowing users to shift focus from
+formatting to content value.
+02/2025 – 07/2025
+•Integrated natural language processing (NLP) to generate context-aware
+proposals, improving output quality and professionalism.
+•Used React, FastAPI, and OpenAI APIs to ensure a smooth and intelligent user
+experience.

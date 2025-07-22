@@ -1,0 +1,24 @@
+{
+  "name": "applydjini",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --loader ts-node/esm applyDjini.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/pdf-parse": "^1.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "node-fetch": "^2.7.0",
+    "pdf-parse": "^1.1.1"
+  }
+}
