@@ -2,28 +2,11 @@
 import 'dotenv/config';
 import { chromium } from 'playwright';
 import fs from 'fs';
-// Remove pdf-parse import and PDF logic
-// import pdfParse from 'pdf-parse';
-// @ts-ignore
-import fetch from 'node-fetch';
+import { generateCoverLetter } from './groqService.js';
 
 // Utility to load CV text from cache file
 function getCVTextFromFile(cachePath: string): string {
   return fs.readFileSync(cachePath, 'utf-8');
-}
-
-async function generateCoverLetter(cvText: string, jobDescription: string, apiKey: string): Promise<string> {
-  const prompt = `Write a professional, concise, and relevant cover letter for the following job description, using the provided CV as background.\n\nJob Description:\n${jobDescription}\n\nCV:\n${cvText}\n\nCover Letter:`;
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }]
-    })
-  });
-  const data = await response.json();
-  console.log(">>>>>>>>>>>>>>>>>>> data",data);
-  return data.candidates?.[0]?.content?.parts?.[0]?.text || 'Hi, I am interested in this position...';
 }
 
 (async () => {
@@ -47,7 +30,7 @@ async function generateCoverLetter(cvText: string, jobDescription: string, apiKe
   // 3. Navigate to filtered job listings based on requirements
   const keywords = [
     "JavaScript", "React.js", "Svelte", "Vue.js",
-    "Strapi", "Python", "Nodejs", "Golang", "Nestjs", "Html", "Css"
+    "Strapi", "Python", "Nodejs", "Golang", "Nestjs", "Html", "Css", "Typescript", "Next.js", "FastAPI", "Node.js", "Express", "MongoDB", "PostgreSQL", "MySQL", "Redis", "Docker",
   ];
   const expLevels = ["no_exp", "1y", "2y", "3y"];
   const baseUrl = "https://djinni.co/jobs/?";
@@ -97,15 +80,32 @@ async function generateCoverLetter(cvText: string, jobDescription: string, apiKe
             console.log(`--> APPLYING: ${link}`);
             await applyButton.click();
             
-            // Scrape job description
+            // Scrape job description - limit length to avoid huge prompts
             let jobDescription = '';
             try {
               jobDescription = await page.$eval('.job-description', el => el.textContent?.trim() || '');
+              // Limit to first 2000 characters to avoid huge prompts
+              if (jobDescription.length > 2000) {
+                jobDescription = jobDescription.substring(0, 2000) + '...';
+              }
             } catch {
-              jobDescription = await page.content(); // fallback: use full page content
+              // Try alternative selectors before falling back to page content
+              try {
+                jobDescription = await page.$eval('[class*="description"], [class*="job-detail"], .job-info', el => el.textContent?.trim() || '');
+                if (jobDescription.length > 2000) {
+                  jobDescription = jobDescription.substring(0, 2000) + '...';
+                }
+              } catch {
+                // Last resort: get just the visible text, not full HTML
+                jobDescription = await page.evaluate(() => {
+                  const body = document.body;
+                  return body ? body.innerText.substring(0, 2000) : '';
+                });
+              }
             }
-            // Generate cover letter
-            const coverLetter = await generateCoverLetter(cvText, jobDescription, process.env.GEMINI_API_KEY || '');
+            // Generate cover letter using Groq
+            const model = process.env.GROQ_MODEL || 'llama-3.1-8b-instant';
+            const coverLetter = await generateCoverLetter(cvText, jobDescription, model);
             await page.fill('#message', coverLetter);
             await page.click('#job_apply');
             
