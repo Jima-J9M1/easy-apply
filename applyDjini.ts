@@ -40,15 +40,15 @@ function getCVTextFromFile(cachePath: string): string {
   await page.goto(jobsUrl);
 
   // Wait for the first job link to appear. This is more reliable than waiting for a container.
-  await page.waitForSelector('.job-item__title-link');
+  await page.waitForSelector('.job_item__header-link');
 
   // 4. Loop through jobs and apply (simplified version)
   // Loop through the first 5 pages
   for (let pageNum = 1; pageNum <= 5; pageNum++) {
     const pagedJobsUrl = jobsUrl + `&page=${pageNum}`;
     await page.goto(pagedJobsUrl);
-    await page.waitForSelector('.job-item__title-link');
-    const jobLinks = await page.$$eval('.job-item__title-link', links => links.map(link => (link as HTMLAnchorElement).href));
+    await page.waitForSelector('.job_item__header-link');
+    const jobLinks = await page.$$eval('.job_item__header-link', links => links.map(link => (link as HTMLAnchorElement).href));
     for (const link of jobLinks) {
       await page.goto(link);
 

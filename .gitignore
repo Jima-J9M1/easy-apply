@@ -2,4 +2,7 @@
 /node_modules
 
 # Environment variables
-.env 
+.env
+
+# Debug artifacts
+djinni-jobs-page.html
