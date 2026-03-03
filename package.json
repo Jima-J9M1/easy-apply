@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node --loader ts-node/esm applyDjini.ts",
+    "start:ai": "node --loader ts-node/esm applyDjiniAI.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:ollama": "node --loader ts-node/esm testOllama.ts",
     "test:groq": "node --loader ts-node/esm testGroq.ts"
